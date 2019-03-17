@@ -16,6 +16,7 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'java'
+apply plugin: 'war'
 apply plugin: 'appengine'
 
 group = 'dev.spiti'
@@ -27,20 +28,20 @@ repositories {
 }
 
 dependencies {
-	appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.42'
-	implementation 'com.google.appengine:appengine-api-1.0-sdk:1.9.42'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-	implementation 'javax.servlet:javax.servlet-api:4.0.1'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.59'
+	compile 'com.google.appengine:appengine-api-1.0-sdk:1.9.59'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	//providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	compile 'javax.servlet:javax.servlet-api:4.0.1'
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
 
-/*appengine {
-    httpPort = 8888
+appengine {
+    httpPort = 8080
     downloadSdk = true
     appcfg {
         email = "spititechnologies.us@gmail.com"
         noCookies = true
         oauth2 = true
     }
-}*/
+}
